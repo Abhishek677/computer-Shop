@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+
+<!--This is Grid pane which allow the component align in row and column as user choice-->
+<GridPane hgap="10" vgap="18"  prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shop.ControlsController">
+
+<!--This Adds the padding for scene area and the element-->
+<padding>
+    <Insets top="10" bottom="10" right="10" left="10" />
+</padding>    
+
+<!--This Divides the pane into distinct columns as user wants-->
+ <columnConstraints>
+   <ColumnConstraints percentWidth="50.0" />   
+   <ColumnConstraints percentWidth="50.0" />
+ </columnConstraints>
+ 
+<!-- Children is sub node of Gridpane
+     This carries all the Controls which will be showing on Screen 
+-->
+ <children>
+   
+    <Label text="Computer Shop" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"  GridPane.halignment="CENTER" />
+
+    <TextField fx:id="txtmouse" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <CheckBox fx:id="chkmouse" onAction="#chkmouse" GridPane.rowIndex="1" GridPane.columnIndex="1" text="Mouse @$10 each"/> 
+    
+    <TextField fx:id="txtusb" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <CheckBox fx:id="chkusb" GridPane.rowIndex="2" onAction="#chkusb"  GridPane.columnIndex="1" text="USB @$20 each"/> 
+    
+    <TextField fx:id="txtcharger" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+    <CheckBox fx:id="chkcharger" GridPane.rowIndex="3" onAction="#chkcharger" GridPane.columnIndex="1" text="Charger @$15 each"/>     
+ 
+    <Label text="Subtract Discount" GridPane.rowIndex="4" GridPane.columnIndex="0" > </Label >
+    <TextField fx:id="txtdis" GridPane.rowIndex="4" GridPane.columnIndex="0"  GridPane.columnSpan="2" >
+    <GridPane.margin>
+             <Insets left="110" right="90"/>
+    </GridPane.margin>     
+    </TextField>
+    
+    <!--All buttons here-->
+    <Button fx:id="bttotal" mnemonicParsing="false" onAction="#total" text="TOTAL" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2" > 
+        <GridPane.margin>
+             <Insets  left="10" />
+        </GridPane.margin> 
+           
+    </Button>  
+    <Button fx:id="btreset" mnemonicParsing="false" onAction="#reset"  text="RESET" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2">  
+     <GridPane.margin>
+             <Insets  left="75" />
+        </GridPane.margin>   
+    </Button>
+    
+    <Button fx:id="btexit"  mnemonicParsing="false" onAction="#exit" text="EXIT" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2"> 
+        <GridPane.margin>
+             <Insets left="138" />
+        </GridPane.margin> 
+    </Button>  
+    <!--Until here!-->
+    
+    <TextArea fx:id="txtarea" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="2" prefColumnCount="15" prefRowCount="10"  />    
+     
+  
+   </children> 
+</GridPane>
